@@ -1,0 +1,21 @@
+<div class="heading">
+  <h1>Zadanie TTMS - Paweł Awramiuk</h1>
+  <div class="form-wrapper">
+    <form #addF="ngForm" (ngSubmit)="handleSubmit(addF.value)">
+      <input class="form-inputs" name="id" type="number" placeholder="id" ngModel #id="ngModel" required>
+      <input class="form-inputs" name="name" type="text" placeholder="imię"ngModel #name="ngModel" required>
+      <input class="form-inputs" name="lastName" type="text" placeholder="nazwisko" ngModel #lastName="ngModel" required>
+      <input class="form-inputs" name="email" type="email" placeholder="email" ngModel #email="ngModel" required>
+    </form>
+    <button [disabled]="!addF.valid" class="AddBtn" (click)="handleSubmit(addF.value)">Dodaj</button>
+  </div>
+
+</div>
+<div class="card-container">
+  <div class="card-grid">
+    <div *ngFor="let user of users">
+      <user-details  [id]="user.id" [name]="user.name" [lastName]="user.lastName" [email]="user.email" [deleteFunc]="delete">
+      </user-details>
+    </div>
+  </div>
+</div>

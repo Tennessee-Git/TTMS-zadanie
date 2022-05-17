@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="details">
+    <div class="id">Id: {{id}}</div>
+    <div class="name">Imię: {{name | uppercase}}</div>
+    <div class="lastName">Nazwisko {{lastName | uppercase}}</div>
+    <div class="email">Email: {{email}}</div>
+  </div>
+  <div class="overlay">
+    <div class="inner-card-controls">
+      <button class="ctrl-btn" (click)="delete()">DELETE</button>
+    </div>
+  </div>
+</div>
